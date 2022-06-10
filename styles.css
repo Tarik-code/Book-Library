@@ -45,7 +45,13 @@ body {
     margin-left: 5px;
 }
 
-
+.header span{
+    display:block;
+    font-weight: 100;
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+}
 
 /* BUTTON ADD BOOK */
 #open {

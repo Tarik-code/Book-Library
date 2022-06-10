@@ -1,5 +1,4 @@
 // DOM variables
-
 const open = document.getElementById('open');
 const modalContainer = document.getElementById('modal_container');
 const addBookBtn = document.getElementById('addBookBtn');
@@ -14,22 +13,28 @@ const bookForm = document.getElementById('bookForm')
 const modal = document.getElementById("modal_container");
 const showBookTitle = document.getElementById('bookLibraryTitle')
 const middleText = document.getElementById('SubmitYourFirstBook')
+
+// Variables
+let myLibrary = [];
+
+// Click events
 open.addEventListener('click', () => {
     modalContainer.classList.add("show")
     modal.style.display = "block";
 })
+
 window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
       modalContainer.classList.remove("show")
     }
-  }
+}
+// Default Book
   const default_book = [
     { title: "The One and Only Ivan", author: "Katherine Applegate", pages: 320, read: true }
-  ];
+];
 
-let myLibrary = [];
-
+// Add book object function
 function addBook (title, author, pages, read){
     this.title = title,
     this.author = author,
@@ -37,6 +42,7 @@ function addBook (title, author, pages, read){
     this.read = read
 }
 
+// Convert User input and save as new book
 document.addEventListener('DOMContentLoaded', ()=> {
     document.getElementById('addBookBtn').addEventListener('click', ()=> {
         let titleValue = title.value;
@@ -60,6 +66,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     });
  })
  
+// Display Book
  function displayLibrary() {
     books.textContent = '';
 
@@ -102,6 +109,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   })
 }
 
+// Remove Book 
 function handleRemove(event) {
   const button = event.target;
   const libraryIndex = button.parentElement.dataset.index;
@@ -113,6 +121,7 @@ function handleRemove(event) {
   updateLocalStorage();
 }
 
+// Read Book change 
 function haveRead(event) {
   const button = event.target;
   const libraryIndex = button.parentElement.dataset.index;
@@ -129,7 +138,7 @@ function haveRead(event) {
   }
 }
 
-
+// Local storage - Display books
  function showResults() {
   books.textContent = '';
   checkLocalStorage()
@@ -173,6 +182,7 @@ function haveRead(event) {
 })
 }
 
+// Check Local storage - Books
 function checkLocalStorage() {
   if (localStorage.getItem("book")) {
     book = JSON.parse(localStorage.getItem("book"));
@@ -180,12 +190,10 @@ function checkLocalStorage() {
     book = default_book;
   }
 }
-
-
+// Update Local storage - New books
 function updateLocalStorage() {
   localStorage.setItem("book", JSON.stringify(myLibrary));
 }
-
-
+// Update books from local storage;
 showResults()
 checkLocalStorage()
