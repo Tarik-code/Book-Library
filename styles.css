@@ -1,0 +1,313 @@
+    /* MAIN */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    opacity: 1;
+    background-size: 38px 38px;
+    background-image:  repeating-linear-gradient(0deg, #304C89, #304C89 1.9000000000000001px, #ffffff 1.9000000000000001px, #ffffff);
+}
+
+.main-part {
+    margin-top: 3vh;
+}
+    
+
+
+    /* HEADER */
+.header {
+    z-index: 1;
+    margin: auto;
+    height: 10vh;
+    width: 90%;
+    background-color: #304C89;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.header img{
+    width: 10vh;
+}
+
+.header p{
+    margin-top: 50px;
+    margin-left: 5px;
+}
+
+
+
+/* BUTTON ADD BOOK */
+#open {
+    border-radius: 15px;
+    border: none;
+    background-color: #ffd166;
+    width: 40vw;
+    height: 3vh;
+    color: black;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 102, 255, 0.25) 0px 48px 100px 0px;
+}
+
+.btnOpen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+
+
+/* Modal Container */
+.modal-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    pointer-events: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;    
+}
+
+.modal {
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    height: 40vh;
+    padding: 35px;
+    margin: 15% auto;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.modal div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+}
+
+
+
+    /* Form overlay */
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+
+
+    /* Book form */
+#bookForm input {
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    border: none;
+    height: 2.5vh;
+    width: 10vw;
+}
+#bookForm input:focus {
+    outline: none;
+    margin-left: 15px;
+
+}
+
+
+
+    /* Bookshelf Title */
+#LibraryTitle {
+    margin-left: 5vw;
+    letter-spacing: 2px;
+}
+
+
+#bookLibraryTitle {
+    display: none;
+    background-color: white;
+}
+
+
+
+    /* BookShelf Layout */
+#books {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.booksAdd {
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: auto;
+    margin: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 15px;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-top: solid 6px #ffd166;
+}
+
+
+
+    /* Book buttons */
+#remove {
+    padding: 10px;
+    width: 8vw;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+}
+#addBookBtn {
+    width: 10vw;
+    border-radius: 15px;
+    border: none;
+    height: 2.5vh;
+    background-color: #ffd166;
+}
+.readBtn {
+    border: none;
+    background-color: #98D9C2;
+    border-radius: 15px;
+    width: 5vw;
+    padding: 5px;
+    color: white;
+
+}
+
+.removeBtn {
+    border: none;
+    background-color: #E86252;
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    width: 5vw;
+    margin-top: 1vh;
+}
+
+
+    /* Add your first book Overlay */
+#SubmitYourFirstBook {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 50%; /* Full width (cover the whole page) */
+    height: 13%; /* Full height (cover the whole page) */
+    top: 50%;
+    margin-left: 25%;
+    background-color: white;
+    cursor: pointer; /* Add a pointer on hover */
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgb(0 102 255 / 15%) 0px 48px 100px 0px;
+
+}
+
+
+
+    /* switch */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #304C89;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #304C89;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  label.switch {
+    margin-top: 10px;
+}

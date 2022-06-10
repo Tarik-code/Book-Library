@@ -1,0 +1,59 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>The Reading Room <br> Your Virtual Library</h1>
+        <img src="bookIcon.svg" alt="">
+    </header>
+    <section class="main-part">
+        <div class="btnOpen"><button id="open"> Add a book</button></div>
+        <div class="modal-container" id="modal_container">
+            <div class="modal">
+                <h3>Add your book below</h3>
+                <form action="#" id="bookForm">
+                    <div>
+                        <input type="text" name="title" id="title" placeholder="Book Title" required>
+                    </div>
+                    <div>
+                        <input type="text" name="author" id="author" placeholder="Author" required>
+                    </div>
+                    <div>
+                        <input type="text" id="pages" placeholder="Pages" pattern="[0-9]+" required>
+                    </div>
+                    <div>
+                        <label class="readQuestion" for="read">Have you read the book?</label>
+                        <label class="switch">
+                            <input type="checkbox" id="read">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" id='addBookBtn'>Add</button>
+                    </div>
+                    <div id="overlay"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div id="bookLibraryTitle">
+        <h2 id="LibraryTitle">Your bookshelf</h2>
+    </div>
+    <div id="SubmitYourFirstBook">
+        <h3>Add your first book!</h3>
+    </div>
+    <section id="books">
+    </section>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
