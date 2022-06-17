@@ -35,11 +35,13 @@ window.onclick = function(event) {
 ];
 
 // Add book object function
-function addBook (title, author, pages, read){
+class addBook{
+  constructor(title, author, pages, read){
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.read = read
+  }
 }
 
 // Convert User input and save as new book
